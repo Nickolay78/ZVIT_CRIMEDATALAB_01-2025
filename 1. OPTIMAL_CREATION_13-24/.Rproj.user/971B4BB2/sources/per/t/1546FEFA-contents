@@ -1,0 +1,31 @@
+# Скрипт визначає послідовність виконання всіх скриптів проєкту
+
+library (beepr)
+
+
+
+          
+          
+exlist<-c("get-proceed-COURT.R",
+           "get-proceed-PG0.R",
+           "get.R",
+           "load2.R",
+          "codeC2.R",
+        "Create-Crimes.R",
+       "step2.R",
+      "sum_check.R",
+     "creation_of_frame_for_sanctions_input.R",
+     "create_articles.R",
+     "dsa_addings.R"
+        )
+                           
+start<-Sys.time()
+  
+for (pow in 1:length(exlist))
+{print (paste("IN PROGRESS NUMBER-------------------",pow))
+  source(exlist[pow],encoding = "UTF-8",echo = TRUE)
+  }
+
+beep(10)
+print (c(paste("Роботу розпочато: ",start," Роботу закінчено ",Sys.time())))
+
